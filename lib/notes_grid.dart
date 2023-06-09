@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:postnotetute/google_sheets_api.dart';
-import 'package:postnotetute/textbox.dart';
+import 'package:todo_app/textbox.dart';
+
+import 'google_sheets_api.dart';
 
 class NotesGrid extends StatelessWidget {
   @override
@@ -8,7 +9,7 @@ class NotesGrid extends StatelessWidget {
     return GridView.builder(
         itemCount: GoogleSheetsApi.currentNotes.length,
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
         itemBuilder: (BuildContext context, int index) {
           return MyTextBox(text: GoogleSheetsApi.currentNotes[index][0]);
         });

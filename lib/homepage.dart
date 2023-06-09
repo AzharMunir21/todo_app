@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:postnotetute/button.dart';
-import 'package:postnotetute/checkbox_list.dart';
-import 'package:postnotetute/google_sheets_api.dart';
-import 'package:postnotetute/loading_circle.dart';
-import 'package:postnotetute/notes_grid.dart';
+
+import 'button.dart';
+import 'checkbox_list.dart';
+import 'google_sheets_api.dart';
+import 'loading_circle.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -61,8 +61,8 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Container(
               child: GoogleSheetsApi.loading == true
-                  ? LoadingCircle()
-                  : MyCheckBoxList(),
+                  ? const LoadingCircle()
+                  : const MyCheckBoxList(),
             ),
           ),
           Container(
@@ -86,8 +86,8 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
+                    const Padding(
+                      padding: EdgeInsets.all(15.0),
                       child: Text('@ c r e a t e d b y k o k o'),
                     ),
                     MyButton(
